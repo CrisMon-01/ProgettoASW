@@ -1,0 +1,24 @@
+# application.yml 
+--- 
+spring: 
+  application: 
+    name: svcb
+
+server: 
+  port: 8081
+
+kafka:
+  consumer:
+    bootstrap: localhost:9092
+    group: WorkUnitApp
+    topic: canalezeta
+
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://localhost:9090/eureka/
+  instance: 
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+    metadataMap: 
+      instanceId: ${spring.application.name}:${random.value}
