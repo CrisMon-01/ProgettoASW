@@ -1,8 +1,0 @@
-#applition.yml
----
-server:
-  port: 9090
-
-eureka:
-  server:
-        evictionIntervalTimerInMs: 10000
