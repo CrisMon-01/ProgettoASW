@@ -2,22 +2,23 @@
 --- 
 spring: 
   application: 
-    name: svca 
+    name: servicea 
 
 server: 
   port: 8080
 
-kafka:
-  producer:
-    bootstrap: localhost:9092
-    topic: canalezeta 
+#kafka:
+#  producer:
+#    bootstrap: kafka:9092
+#    topic: canalezeta 
 
 eureka: 
   client: 
     serviceUrl: 
-      defaultZone: http://localhost:9090/eureka/
+#      defaultZone: http://localhost:9090/eureka/ docker namespace
+      defaultZone: http://eureka:8761/eureka/
   instance: 
-    leaseRenewalIntervalInSeconds: 5
+    leaseRenewalIntervalInSeconds: 10
     leaseExpirationDurationInSeconds: 5
     metadataMap: 
       instanceId: ${spring.application.name}:${random.value}
