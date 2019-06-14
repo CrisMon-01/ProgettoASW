@@ -6,6 +6,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group = 'cft'
+//version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -19,7 +20,6 @@ ext {
 dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter'	
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'	//actuator
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'	//ribbon
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'	//eureka client
 	implementation 'org.springframework.kafka:spring-kafka'	//kafka

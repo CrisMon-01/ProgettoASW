@@ -2,23 +2,31 @@
 --- 
 spring: 
   application: 
-    name: servicea 
+    name: sva   #TO-DO serve?
 
 server: 
   port: 8080
 
 #kafka:
 #  producer:
-#    bootstrap: kafka:9092
+#    bootstrap: localhost:9092
 #    topic: canalezeta 
 
-eureka: 
-  client: 
-    serviceUrl: 
-#      defaultZone: http://localhost:9090/eureka/ docker namespace
-      defaultZone: http://eureka:8761/eureka/
-  instance: 
-    leaseRenewalIntervalInSeconds: 10
-    leaseExpirationDurationInSeconds: 5
-    metadataMap: 
-      instanceId: ${spring.application.name}:${random.value}
+#eureka: 
+#  client: 
+#    serviceUrl: 
+#      defaultZone: http://localhost:9090/eureka/
+#  instance: 
+#    leaseRenewalIntervalInSeconds: 5
+#    leaseExpirationDurationInSeconds: 5
+#    metadataMap: 
+#      instanceId: ${spring.application.name}:${random.value}
+
+---
+
+spring: 
+  profiles: istanzauno
+#  application: 
+#    name: nomeservizio
+    
+animals: Elefante, Balena, Pinguino, Cammello
