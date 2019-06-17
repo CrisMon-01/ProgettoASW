@@ -2,12 +2,15 @@
 --- 
 spring: 
   application: 
-    name: servizioA                                           #SERVE?
+    name: servizioA
 
-#kafka:
-#  producer:
-#    bootstrap: localhost:9092
-#    topic: canalezeta 
+kafka:
+  producer:
+    bootstrap: localhost:9092                                 #DA MODIFICARE IN DOCKER
+    #    group: WorkUnitApp
+    topic: canalezeta 
+  channel:
+    out: asw.kafka.channel.alpha
 
 eureka: 
   client: 
@@ -25,7 +28,7 @@ server:
 
 animals: Elefante, Balena, Pinguino, Cammello
 
-#---
+#---                                                           #SERVE?
 
 #spring: 
 #  profiles: istanzauno

@@ -2,23 +2,28 @@
 --- 
 spring: 
   application: 
-    name: svcb
-
-server: 
-  port: 8081
+    name: servizioB
 
 kafka:
   consumer:
     bootstrap: localhost:9092
-    group: WorkUnitApp
+#    group: WorkUnitApp
     topic: canalezeta
+  channel:
+    in: asw.kafka.channel.alpha
+  groupId: servizioBConsumer
 
 eureka: 
   client: 
     serviceUrl: 
-      defaultZone: http://localhost:9090/eureka/
-  instance: 
-    leaseRenewalIntervalInSeconds: 5
-    leaseExpirationDurationInSeconds: 5
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://eureka:8761/eureka/                #QUESTA PER DOPO
+  instance:                                                   # questo rappresenta la SINGOLA ISTANZA del servizio
+    leaseRenewalIntervalInSeconds: 10                         # DO NOT DO THIS IN PRODUCTION
+    #leaseExpirationDurationInSeconds: 5                      #SERVE?
     metadataMap: 
-      instanceId: ${spring.application.name}:${random.value}
+      instanceId: ${spring.application.name}:${server.port}  #DA MODIFICARE IN NOMI DI PERSONA
+
+      
+server: 
+  port: 8081
