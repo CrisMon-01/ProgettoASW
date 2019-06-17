@@ -1,4 +1,9 @@
-#applition.yml
+#application.yml
 ---
 server:
   port: 8761
+  
+#eureka:
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false

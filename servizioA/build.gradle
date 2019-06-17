@@ -1,6 +1,6 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.5.RELEASE'
 	id 'java'
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -17,6 +17,12 @@ ext {
 	set('springCloudVersion', "Greenwich.SR1")
 }
 
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+
 dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter'	
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'	//actuator
@@ -26,8 +32,3 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
-}

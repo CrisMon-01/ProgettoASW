@@ -2,31 +2,34 @@
 --- 
 spring: 
   application: 
-    name: sva   #TO-DO serve?
-
-server: 
-  port: 8080
+    name: servizioA                                           #SERVE?
 
 #kafka:
 #  producer:
 #    bootstrap: localhost:9092
 #    topic: canalezeta 
 
-#eureka: 
-#  client: 
-#    serviceUrl: 
-#      defaultZone: http://localhost:9090/eureka/
-#  instance: 
-#    leaseRenewalIntervalInSeconds: 5
-#    leaseExpirationDurationInSeconds: 5
-#    metadataMap: 
-#      instanceId: ${spring.application.name}:${random.value}
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://eureka:8761/eureka/                #QUESTA PER DOPO
+  instance:                                                   # questo rappresenta la SINGOLA ISTANZA del servizio
+    leaseRenewalIntervalInSeconds: 10
+    #leaseExpirationDurationInSeconds: 5                      #SERVE?
+    metadataMap: 
+      instanceId: ${spring.application.name}:${random.value}  #DA MODIFICARE IN NOMI DI PERSONA
+
+server: 
+  port: 8080
+
+animals: Elefante, Balena, Pinguino, Cammello
 
 ---
 
 spring: 
   profiles: istanzauno
-#  application: 
-#    name: nomeservizio
+  application: 
+     name: nomeservizio
     
 animals: Elefante, Balena, Pinguino, Cammello
