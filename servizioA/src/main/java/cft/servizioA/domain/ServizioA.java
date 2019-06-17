@@ -9,26 +9,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServizioA {
 	
-	@Value("${spring.application.name}")
+	@Value("${eureka.instance.metadataMap.instanceId}")
 	private String instanceName;
 	
-//	@Value("${animals}")
-//	private String animals;
-//	
-//	public String getAnimale() {
-//		String[] animali = animals.split(",");
-//		int i = (int) (Math.round(Math.random()*(animali.length-1)));
-//		String animale = animali[i];	
-//		return animale;
-//	}
+	@Value("${animals}")
+	private String animals;
+	
+	public String getAnimale() {
+		String[] animali = animals.split(",");
+		int i = (int) (Math.round(Math.random()*(animali.length-1)));
+		String animale = animali[i];	
+		return animale;
+	}
 	
 	public String getName() {
 		return this.instanceName;
 	}
 	
 	public String getSentence() {
-		String sentence = this.getName(); 
-//				+": "+this.getAnimale();
+		String sentence = this.getName() 
+				+" : "+this.getAnimale();
 		return sentence;
 	}
 	
