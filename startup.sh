@@ -13,10 +13,10 @@ echo BUILD SERVIZIO B
 cd servizioB
 gradle build
 cd ..
-echo BUILD SERVIZIO C
-cd servizioC
-gradle build
+#echo BUILD SERVIZIO C
+#cd servizioC
+#gradle build
 #cd ..
-#echo !!! BUILD COMPLETE !!!
-#echo START APPLICAZIONE
+echo !!! BUILD COMPLETE !!!
+echo START APPLICAZIONE
 docker-compose up -d
