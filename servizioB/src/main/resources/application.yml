@@ -4,21 +4,21 @@ spring:
   application: 
     name: servizioB
 
-kafka:
-  consumer:
-    bootstrap: kafka:9092
+#kafka:   IN APPLICATION PROPERTIES
+#  consumer:
+#    bootstrap: kafka:9092
 #    bootstrap: localhost:9092
 #    group: WorkUnitApp
-    topic: canalezeta
-  channel:
-    in: asw.kafka.channel.alpha
-  groupId: servizioBConsumer
+#    topic: canalezeta
+#  channel:
+#    in: asw.kafka.channel.canalezeta
+#  groupId: servizioBConsumer
 
 eureka: 
   client: 
-    serviceUrl: 
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka 
       #defaultZone: http://localhost:8761/eureka/
-      defaultZone: http://eureka:8761/eureka                #QUESTA PER DOPO
   instance:                                                   # questo rappresenta la SINGOLA ISTANZA del servizio
     leaseRenewalIntervalInSeconds: 10                         # DO NOT DO THIS IN PRODUCTION
     #leaseExpirationDurationInSeconds: 5                      #SERVE?

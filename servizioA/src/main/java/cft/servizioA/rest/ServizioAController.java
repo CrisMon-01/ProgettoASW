@@ -12,7 +12,7 @@ import cft.servizioA.domain.ServizioA;
 @RestController
 public class ServizioAController {
 	
-	@Autowired 
+//	@Autowired 
 	private ServizioA serviceA;
 
 	//private final Logger logger = Logger.getLogger(ServizioAController.class.toString()); 

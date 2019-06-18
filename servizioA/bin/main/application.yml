@@ -4,14 +4,14 @@ spring:
   application: 
     name: servizioA
 
-kafka:
-  producer:
-    bootstrap: kafka:9092                                 #DA MODIFICARE IN DOCKER
+#kafka: IN APPLICATION PROPERTIES
+#  producer:
+#    bootstrap: kafka:9092                                 #DA MODIFICARE IN DOCKER POTREI USARE {DOCKER_HOST_IP}
 #    bootstrap: localhost:9092
     #    group: WorkUnitApp
-    topic: canalezeta 
-  channel:
-    out: asw.kafka.channel.alpha
+#    topic: canalezeta 
+#  channel:
+#    out: asw.kafka.channel.canalezeta
 
 eureka: 
   client: 

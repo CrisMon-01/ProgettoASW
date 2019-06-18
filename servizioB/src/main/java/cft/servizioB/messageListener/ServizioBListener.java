@@ -13,18 +13,18 @@ import cft.servizioB.domain.ServizioB;
 @Component
 public class ServizioBListener {
 
-	private Logger logger = Logger.getLogger(ServizioBListener.class.toString());
+	//private Logger logger = Logger.getLogger(ServizioBListener.class.toString());
 
-	@Value("${kafka.channel.in}")
+	@Value("${cft.kafka.channel.in}")
 	private String channel;
 
-	@Value("${kafka.groupid}")
+	@Value("${cft.kafka.groupid}")
 	private String groupId;
 
-    //@Autowired
+    @Autowired
     private ServizioB consumerService;
 
-	@KafkaListener(topics = "${kafka.channel.in}", groupId="${kafka.groupid}")
+	@KafkaListener(topics = "${cft.kafka.channel.in}", groupId="${cft.kafka.groupid}")
     public void listen(ConsumerRecord<String, String> record) throws Exception {
         // logger.info("MESSAGE LISTENER: " + record.toString());
         String message = record.value();

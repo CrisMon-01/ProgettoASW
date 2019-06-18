@@ -14,10 +14,10 @@ public class ServizioAPublisherImpl implements ServizioAPublisher {
 
 	//private Logger logger = Logger.getLogger(ServizioAPublisherImpl.class.toString());
 
-	@Value("${kafka.channel.out}")
+	@Value("${cft.kafka.channel.out}")
 	private String channel;
 
-    //@Autowired
+//   @Autowired
     private KafkaTemplate<String, String> template;
 
     @Override
