@@ -34,5 +34,6 @@ services:
     build: './servizioA' 
   serviziob:
     depends_on:
-      - "servizioa"
+      - "kafka"
+      - "zookeeper"
     build: './servizioB'
