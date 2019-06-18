@@ -17,12 +17,12 @@ public class ServizioAController {
 
 	//private final Logger logger = Logger.getLogger(ServizioAController.class.toString()); 
 
-//	@GetMapping(value="/")
-//	public String getXXX() {
-//		String word = serviceA.getSentence(); 
-//		logger.info("getSentence(): " + word);
-//		return word; 
-//	}
+	@GetMapping(value="/")
+	public String getSentenceServiceC() {
+		String word = null; 
+		//logger.info("getSentence(): " + word);
+		return word; 
+	}
 	
 	@PostMapping(value="/")
 	public void sendMessageToKafkaTopic(){					//MIGLIORA NOMENCLATURA METODI

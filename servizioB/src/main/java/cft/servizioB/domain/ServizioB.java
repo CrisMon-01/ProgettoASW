@@ -23,11 +23,13 @@ public class ServizioB {
 		this.setMessageFromA(message);
 	}
 	
-	public String test() {					//TEST, POI VA MODIFICATO PER INTERAGIRE CON C
-		String message = this.instanceName
-				+ " : " + this.messageFromA; 
-		//logger.info("PUBLISHING MESSAGE: " + message);
-		return message;
-	}
+//	public String test() {					//TEST, POI VA MODIFICATO PER INTERAGIRE CON C
+//		String message = this.instanceName
+//				+ " : " + this.messageFromA; 
+//		//logger.info("PUBLISHING MESSAGE: " + message);
+//		return message;
+//	}
+	
+
 		
 }

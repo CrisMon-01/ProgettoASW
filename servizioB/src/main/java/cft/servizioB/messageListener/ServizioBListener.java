@@ -22,13 +22,13 @@ public class ServizioBListener {
 	private String groupId;
 
     //@Autowired
-    private ServizioB simpleConsumerService;
+    private ServizioB consumerService;
 
 	@KafkaListener(topics = "${kafka.channel.in}", groupId="${kafka.groupid}")
     public void listen(ConsumerRecord<String, String> record) throws Exception {
         // logger.info("MESSAGE LISTENER: " + record.toString());
         String message = record.value();
-		simpleConsumerService.onMessage(message); 
+		consumerService.onMessage(message); 
     }
 
 }

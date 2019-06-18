@@ -12,18 +12,18 @@ services:
       - "zookeeper"
     ports:
       - "9092:9092"
-      #- "9094:9094"
+      - "9094:9094"
     environment:
       KAFKA_ADVERTISED_HOST_NAME: ${DOCKER_HOST_IP:-10.11.1.111}
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_CREATE_TOPICS: "asw.kafka.channel.alpha:4:1,asw.kafka.channel.beta:4:1,asw.kafka.channel.gamma:4:1"      
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#  servizioa:
-#    depends_on: 
-#      - "kafka"
-#      - "zookeeper"
-#    build: './servizioA' 
+  servizioa:
+    depends_on: 
+      - "kafka"
+      - "zookeeper"
+    build: './servizioA' 
 #    clientchiamante:
 #      build: './clientchiamante'
 #      depends_on: 
