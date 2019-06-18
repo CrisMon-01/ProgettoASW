@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y curl
 
 ADD build/libs/servizioB.jar servizioB.jar
 
-EXPOSE 8080	#ports 8081:8080
+EXPOSE 8080
+#ports 8081:8080
 
 ENTRYPOINT ["java", "-Xmx128m", "-Xms128m", "-jar", "servizioB.jar"]
 

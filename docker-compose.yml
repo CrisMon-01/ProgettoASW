@@ -1,6 +1,6 @@
 version: '3'
 
-services:
+services: 
   zookeeper:
     image: wurstmeister/zookeeper
     hostname: zookeeper
@@ -19,13 +19,20 @@ services:
       KAFKA_CREATE_TOPICS: "asw.kafka.channel.alpha:4:1,asw.kafka.channel.beta:4:1,asw.kafka.channel.gamma:4:1"      
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  eureka:
+    build: 
+      context: ./eureka-server
+    depends_on: 
+      - "kafka"
+    ports:
+      - "8761:8761"
+    container_name: eureka
   servizioa:
     depends_on: 
       - "kafka"
       - "zookeeper"
     build: './servizioA' 
-#    clientchiamante:
-#      build: './clientchiamante'
-#      depends_on: 
-#        - "servizioa"
-#        - "serviziob"
+  serviziob:
+    depends_on:
+      - "servizioa"
+    build: './servizioB'

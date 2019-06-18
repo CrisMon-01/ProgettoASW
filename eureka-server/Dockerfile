@@ -4,7 +4,7 @@
 
 FROM openjdk:8-jdk
 
-ADD build/libs/eureka.jar eureka.jar
+ADD build/libs/eureka-server.jar eureka.jar
 
 EXPOSE 8761
 
