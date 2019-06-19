@@ -20,7 +20,7 @@ services:
       KAFKA_CREATE_TOPICS: "cft.kafka.channel.canalezeta:4:1"       #occhio
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      container_name: "kafka"
+    container_name: "kafka"
   eureka:
     build: 
       context: ./eureka-server
@@ -31,13 +31,11 @@ services:
     container_name: eureka
   servizioa:
     depends_on: 
-      - "kafka"
-      - "zookeeper"
+      - "eureka"
     build: './servizioA' 
     container_name: "servizioA"
   serviziob:
     depends_on:
-      - "kafka"
-      - "zookeeper"
+      - "eureka"
     build: './servizioB'
     container_name: "servizioB"

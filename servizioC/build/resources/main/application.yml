@@ -2,7 +2,7 @@
 --- 
 spring: 
   application: 
-    name: servizioA
+    name: cservice
 
 eureka: 
   client: 
@@ -13,10 +13,12 @@ eureka:
     leaseRenewalIntervalInSeconds: 10                         # DO NOT DO THIS IN PRODUCTION
     #leaseExpirationDurationInSeconds: 5                      #SERVE?
     metadataMap: 
-      instanceId: ${spring.application.name}:${server.port}  #DA MODIFICARE IN NOMI DI PERSONA
+      instanceId: ${spring.application.name}:${random.value}  #DA MODIFICARE IN NOMI DI PERSONA
 
 server: 
-  port: 8080
+  port: ${PORT:${SERVER_PORT:0}}
+  
+names: Achille, Ettore, Menelao, Priamo, Ulisse
 
 #---                                                           #SERVE?
 
@@ -25,4 +27,5 @@ server:
 #  application: 
 #     name: nomeservizio
     
-#animals: Elefante, Balena, Pinguino, Cammello
+#animals: Balena, Cammello, Elefante, Pinguino, Volpe
+
