@@ -13,29 +13,29 @@ services:
       - "zookeeper"
     ports:
       - "9092:9092"
-      - "9094:9094"
+#      - "9094:9094"
     environment:
       KAFKA_ADVERTISED_HOST_NAME: ${DOCKER_HOST_IP:-10.11.1.111}
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_CREATE_TOPICS: "cft.kafka.channel.canalezeta:4:1"       #occhio
+      KAFKA_CREATE_TOPICS: "cft.kafka.channel.canalezeta:4:1"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     container_name: "kafka"
-  eureka:
-    build: 
-      context: ./eureka-server
-    depends_on: 
-      - "kafka"
-    ports:
-      - "8761:8761"
-    container_name: eureka
-  servizioa:
-    depends_on: 
-      - "eureka"
-    build: './servizioA' 
-    container_name: "servizioA"
-  serviziob:
-    depends_on:
-      - "eureka"
-    build: './servizioB'
-    container_name: "servizioB"
+#  eureka:
+#    build: 
+#      context: ./eureka-server
+#    depends_on: 
+#      - "kafka"
+#    ports:
+#      - "8761:8761"
+#    container_name: eureka
+#  servizioa:
+#    depends_on: 
+#      - "eureka"
+#    build: './servizioA' 
+#    container_name: "servizioA"
+#  serviziob:
+#    depends_on:
+#      - "eureka"
+#    build: './servizioB'
+#    container_name: "servizioB"
