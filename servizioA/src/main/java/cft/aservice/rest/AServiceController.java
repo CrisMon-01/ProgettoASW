@@ -24,12 +24,12 @@ public class AServiceController {
 		return this.serviceA.getAnimals(); 
 	}
 	
-	/*
+	
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public void sendMessageToKafkaTopic(){					//MIGLIORA NOMENCLATURA METODI
+	public void sendMessageToKafkaTopic(){					//MIGLIORA NOMENCLATURA METODO
 		serviceA.publish();
 	}
-	*/
+	
 	
 
 }

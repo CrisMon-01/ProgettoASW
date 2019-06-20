@@ -17,14 +17,18 @@ spring:
 eureka: 
   client: 
     serviceUrl:
-      defaultZone: http://eureka:8761/eureka 
-      #defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://eureka:8761/eureka 
   instance:                                                   # questo rappresenta la SINGOLA ISTANZA del servizio
     leaseRenewalIntervalInSeconds: 10                         # DO NOT DO THIS IN PRODUCTION
     #leaseExpirationDurationInSeconds: 5                      #SERVE?
     metadataMap: 
-      instanceId: ${spring.application.name}:${server.port}  #DA MODIFICARE IN NOMI DI PERSONA
+      instanceId: ${spring.application.name}:${random.value}  #DA MODIFICARE IN NOMI DI PERSONA
 
       
-server: 
-  port: 8081
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+  #port: 8080
+
+names: Achille, Ettore, Menelao, Priamo, Ulisse
+animals: Balena, Cammello, Elefante, Pinguino, Volpe

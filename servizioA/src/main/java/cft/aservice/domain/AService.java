@@ -28,13 +28,14 @@ public class AService {
 	
 	
 	
-//	private String getInstanceName() {
-//		if(this.instanceName == null) {
-//			int rand = new Random().nextInt(this.names.length);
-//			this.instanceName = this.names[rand];
-//		}
-//		return this.instanceName;
-//	} 
+	private String getInstanceName() {
+		if(this.instanceName == null) {
+			String[] nomi = names.split(",");
+			int rnd = (int) (Math.round(Math.random()*(nomi.length-1)));
+			this.instanceName = nomi[rnd];
+		}
+		return this.instanceName;
+	} 
 	
 //	public void saveAnimal() {
 //		String name = this.getInstanceName() + ":" + this.getAnimal();

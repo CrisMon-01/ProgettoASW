@@ -17,7 +17,7 @@ public class AServicePublisherImpl implements AServicePublisher {
 	@Value("${cft.kafka.channel.out}")
 	private String channel;
 
-//   @Autowired
+	@Autowired
     private KafkaTemplate<String, String> template;
 
     @Override
