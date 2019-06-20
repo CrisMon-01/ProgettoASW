@@ -12,7 +12,7 @@ public class AService {
 	
 	//private static final Logger logger = Logger.getLogger(ServizioA.class.toString());
 	
-//	@Autowired
+	@Autowired
 	private AServicePublisher publisher;
 	
 	@Autowired

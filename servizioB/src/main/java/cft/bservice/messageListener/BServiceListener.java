@@ -15,16 +15,17 @@ public class BServiceListener {
 
 	//private Logger logger = Logger.getLogger(ServizioBListener.class.toString());
 
-	@Value("${cft.kafka.channel.in}")
+	@Value("${channelin}")
 	private String channel;
 
-	@Value("${cft.kafka.groupid}")
+	@Value("${groupid}")
 	private String groupId;
 
     @Autowired
     private BService consumerService;
 
-	@KafkaListener(topics = "${cft.kafka.channel.in}", groupId="${cft.kafka.groupid}")
+	//@KafkaListener(topics = "${cft.kafka.channel.in}", groupId="${cft.kafka.groupid}")
+	@KafkaListener(topics = "${channelin}", groupId="${groupid}")
     public void listen(ConsumerRecord<String, String> record) throws Exception {
         // logger.info("MESSAGE LISTENER: " + record.toString());
         String message = record.value();

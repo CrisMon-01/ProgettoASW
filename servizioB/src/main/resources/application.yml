@@ -2,7 +2,7 @@
 --- 
 spring: 
   application: 
-    name: servizioB
+    name: bservice
 
 #kafka:   IN APPLICATION PROPERTIES
 #  consumer:
@@ -32,3 +32,6 @@ server:
 
 names: Achille, Ettore, Menelao, Priamo, Ulisse
 animals: Balena, Cammello, Elefante, Pinguino, Volpe
+
+channelin: cft.kafka.channel.canalezeta
+groupid: simple-consumer

@@ -31,6 +31,8 @@ server:
 names: Achille, Ettore, Menelao, Priamo, Ulisse
 animals: Balena, Cammello, Elefante, Pinguino, Volpe
 
+channelout: cft.kafka.channel.canalezeta  #V. DOCKER COMPOSE
+
 #---                                                           #SERVE?
 
 #spring: 
