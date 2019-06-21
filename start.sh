@@ -24,7 +24,7 @@ gradle build
 cd ..
 
 echo !!! ALL BUILD RUN APPLICATIONS !!!
-java -Xms64m -Xmx128m -jar eureka-serve/build/libs/eureka-server.jar &
+java -Xms64m -Xmx128m -jar eureka-server/build/libs/eureka-server.jar &
 java -Xms64m -Xmx128m -jar servizioA/build/libs/servizioA.jar &
 java -Xms64m -Xmx128m -jar servizioB/build/libs/servizioB.jar &
 java -Xms64m -Xmx128m -jar servizioC/build/libs/servizioC.jar &
