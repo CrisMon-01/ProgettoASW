@@ -2,6 +2,6 @@ package cft.bservice.domain;
 
 public interface CService {
 
-	//TO-DO
+	public void saveAnimals(String name);
 
 }

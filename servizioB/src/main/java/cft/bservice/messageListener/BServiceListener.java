@@ -9,6 +9,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import cft.bservice.domain.BService;
+import cft.bservice.domain.CService;
 
 @Component
 public class BServiceListener {
@@ -24,12 +25,13 @@ public class BServiceListener {
     @Autowired
     private BService consumerService;
 
+    
 	@KafkaListener(topics = "${cft.kafka.channel.in}", groupId = "${cft.kafka.groupid}")
 	//@KafkaListener(topics = "${channelin}", groupId="${groupid}")
     public void listen(ConsumerRecord<String, String> record) throws Exception {
         // logger.info("MESSAGE LISTENER: " + record.toString());
         String message = record.value();
-		consumerService.onMessage(message); 
+		consumerService.onMessage(message);
     }
 
 }

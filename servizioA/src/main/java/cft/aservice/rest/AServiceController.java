@@ -24,9 +24,8 @@ public class AServiceController {
 		return this.serviceA.getAnimals(); 
 	}
 	
-	
-	@RequestMapping(value="/publish", method=RequestMethod.POST)
-	public void sendMessageToKafkaTopic(){					//MIGLIORA NOMENCLATURA METODO
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public void sendMessageToKafkaTopic(){
 		serviceA.publish();
 	}
 	

@@ -29,7 +29,7 @@ public class CService {
 	public String getAnimals() {
 		String commaSeparated = String.join(",", this.animals);
 		String out = this.getInstanceName() + ":[" + commaSeparated + "]";
-		return out; 
+		return out;
 	}
 
 	private String getInstanceName() {

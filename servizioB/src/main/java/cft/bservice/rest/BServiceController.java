@@ -18,11 +18,13 @@ public class BServiceController {
 	private final Logger logger = Logger.getLogger(BServiceController.class.toString()); 
 
 
-	@RequestMapping("/")									//TEST, POI VA RIMOSSO
-	public String test() {
-		String word = serviceB.test(); 
-		logger.info("getSentence(): " + word);
-		return word; 
-	}
+//	@RequestMapping("/")									//TEST, POI VA RIMOSSO
+//	public String test() {
+//		String word = serviceB.test(); 
+//		logger.info("getSentence(): " + word);
+//		return word; 
+//	}
+	
+	
 
 }
