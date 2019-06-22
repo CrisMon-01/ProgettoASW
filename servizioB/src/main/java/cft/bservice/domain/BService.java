@@ -41,8 +41,8 @@ public class BService {
 	}
 
 	public void sendMessageToC() {
-		String message = this.instanceName
-				+ " : " + this.messageFromA;
+		String message = this.getInstanceName()
+				+ ":" + this.messageFromA;
 		//logger.info("PUBLISHING MESSAGE: " + message);
 		this.animalService.saveAnimals(message);
 	}

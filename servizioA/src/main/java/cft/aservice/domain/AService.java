@@ -24,7 +24,7 @@ public class AService {
 	@Value("${animals}")
 	private String animals;
 	
-	private String instanceName = "test";		//DA RIMUOVERE DOPO
+	private String instanceName;
 	
 	
 	
@@ -54,8 +54,8 @@ public class AService {
 	}
 	
 	public void publish() {
-		String message = this.instanceName 
-				+ " : " + this.getAnimal();
+		String message = this.getInstanceName()
+				+ ":" + this.getAnimal();
 		//logger.info("PUBLISHING MESSAGE: " + message);
 		publisher.publish(message);
 	}
