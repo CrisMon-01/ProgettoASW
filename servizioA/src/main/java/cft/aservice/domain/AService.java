@@ -24,7 +24,7 @@ public class AService {
 	@Value("${animals}")
 	private String animals;
 	
-	private String instanceName;
+	private String instanceName = "test";		//DA RIMUOVERE DOPO
 	
 	
 	

@@ -25,7 +25,7 @@ public class AServiceController {
 	}
 	
 	
-	@RequestMapping(value="/", method=RequestMethod.POST)
+	@RequestMapping(value="/publish", method=RequestMethod.POST)
 	public void sendMessageToKafkaTopic(){					//MIGLIORA NOMENCLATURA METODO
 		serviceA.publish();
 	}

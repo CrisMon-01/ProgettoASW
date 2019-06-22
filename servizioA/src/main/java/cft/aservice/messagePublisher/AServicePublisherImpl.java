@@ -14,8 +14,8 @@ public class AServicePublisherImpl implements AServicePublisher {
 
 	//private Logger logger = Logger.getLogger(ServizioAPublisherImpl.class.toString());
 
-	//@Value("${cft.kafka.channel.out}")
-	@Value("${channelout}")
+	@Value("${cft.kafka.channel.out}")
+	//@Value("${channelout}")
 	private String channel;
 
 	@Autowired

@@ -21,6 +21,7 @@ public class BService {
 	public void onMessage(String message) {
 		//logger.info("RECEIVED MESSAGE: " + message);
 		this.setMessageFromA(message);
+		
 	}
 	
 	public String test() {					//TEST, POI VA MODIFICATO PER INTERAGIRE CON C

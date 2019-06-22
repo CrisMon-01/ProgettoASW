@@ -33,5 +33,5 @@ server:
 names: Achille, Ettore, Menelao, Priamo, Ulisse
 animals: Balena, Cammello, Elefante, Pinguino, Volpe
 
-channelin: cft.kafka.channel.canalezeta
-groupid: simple-consumer
+#channelin: cft.kafka.channel.canalezeta
+#groupid: simple-consumer
