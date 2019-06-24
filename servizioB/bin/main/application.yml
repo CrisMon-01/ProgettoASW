@@ -17,8 +17,8 @@ spring:
 eureka: 
   client: 
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-      #defaultZone: http://eureka:8761/eureka 
+      #defaultZone: http://localhost:8761/eureka/     #LOCALE
+      defaultZone: http://eureka:8761/eureka 
   instance:                                                   # questo rappresenta la SINGOLA ISTANZA del servizio
     leaseRenewalIntervalInSeconds: 10                         # DO NOT DO THIS IN PRODUCTION
     #leaseExpirationDurationInSeconds: 5                      #SERVE?
@@ -30,7 +30,7 @@ server:
   port: ${PORT:${SERVER_PORT:0}}
   #port: 8080
 
-names: Achille, Ettore, Menelao, Priamo, Ulisse
+names: Beatrice, Beararda, Bernardo
 animals: Balena, Cammello, Elefante, Pinguino, Volpe
 
 #channelin: cft.kafka.channel.canalezeta
