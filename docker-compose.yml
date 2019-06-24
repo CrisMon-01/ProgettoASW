@@ -1,5 +1,4 @@
 version: '3'
-
 services: 
   zookeeper:
     image: wurstmeister/zookeeper
@@ -13,7 +12,7 @@ services:
       - "zookeeper"
     ports:
       - "9092:9092"
-#      - "9094:9094"
+     #- "9094:9094"
     environment:
       KAFKA_ADVERTISED_HOST_NAME: ${DOCKER_HOST_IP:-10.11.1.111}
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -29,18 +28,24 @@ services:
     ports:
       - "8761:8761"
     container_name: eureka
+  zuul:
+    build: 
+      context: ./zuul-gateway
+    depends_on: 
+      - "eureka"
+    ports:
+      - "8080:8080"
+    container_name: "zuul"
   servizioa:
     depends_on: 
       - "eureka"
-    build: './servizioA' 
-    container_name: "servizioA"
+    build: './servizioA'
   serviziob:
     depends_on:
       - "eureka"
     build: './servizioB'
-    container_name: "servizioB"
+    container_name: "serviziob"
   servizioc:
     depends_on:
       - "eureka"
     build: './servizioC'
-    container_name: "servizioC"
