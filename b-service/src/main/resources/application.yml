@@ -1,0 +1,21 @@
+# application.yml 
+--- 
+spring: 
+  application: 
+    name: bservice
+
+eureka: 
+  client: 
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka 
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap: 
+      instanceId: ${spring.application.name}:${random.value}
+
+      
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+names: Beatrice, Berarda, Bernardo
+animals: Balena, Cammello, Elefante, Pinguino, Volpe

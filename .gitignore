@@ -4,6 +4,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+bin/
+gradlew
+*.bat
+environments/workstation/.vagrant
 
 ### STS ###
 .apt_generated

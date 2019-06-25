@@ -22,29 +22,29 @@ services:
     container_name: "kafka"
   eureka:
     build: 
-      context: ./eureka-server
+      context: './eureka-server'
     depends_on: 
       - "kafka"
     ports:
       - "8761:8761"
-    container_name: eureka
+    container_name: "eureka"
   zuul:
     build: 
-      context: ./zuul-gateway
+      context: './zuul-gateway'
     depends_on: 
       - "eureka"
     ports:
       - "8080:8080"
     container_name: "zuul"
-  servizioa:
+  aservice:
     depends_on: 
       - "eureka"
-    build: './servizioA'
-  serviziob:
+    build: './a-service'
+  bservice:
     depends_on:
       - "eureka"
-    build: './servizioB'
-  servizioc:
+    build: './b-service'
+  cservice:
     depends_on:
       - "eureka"
-    build: './servizioC'
+    build: './c-service'

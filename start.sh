@@ -3,34 +3,36 @@
 echo SOURCE
 source set-docker-host-ip.sh
 
-#echo START KAFKA IN DOCKER
-#sh start-kafka.sh
+echo --- BEGIN BUILD ---
 
-echo !!!BUILD!!!
+echo BUILD EUREKA
 cd eureka-server
 gradle build
 cd ..
-cd servizioA
+
+echo BUILD A-SERVICE
+cd a-service
 gradle build
 cd ..
-cd servizioB
+
+echo BUILD B-SERVICE
+cd b-service
 gradle build
 cd ..
-cd servizioC
-gradle build 
+
+echo BUILD C-SERVICE
+cd c-service
+gradle build
 cd ..
+
+echo BUILD ZUUL-GATEWAY
 cd zuul-gateway
 gradle build 
 cd ..
 
-echo !!!DOCKER COMPOSE!!!
-docker-compose up --build --scale servizioa=3 --scale serviziob=3 --scale servizioc=3 
+echo --- BUILD COMPLETE ---
 
-#echo !!! ALL BUILD RUN APPLICATIONS !!!
-#java -Xms64m -Xmx128m -jar eureka-server/build/libs/eureka-server.jar &
-#java -Xms64m -Xmx128m -jar servizioA/build/libs/servizioA.jar &
-#java -Xms64m -Xmx128m -jar servizioB/build/libs/servizioB.jar &
-#java -Xms64m -Xmx128m -jar servizioC/build/libs/servizioC.jar &
-#java -Xms64m -Xmx128m -jar zuul-gateway/build/libs/zuul-gateway.jar
+echo --- DOCKER COMPOSE ---
+docker-compose up --build --scale aservice=2 --scale bservice=2 --scale cservice=2 
 
-echo !!! THE APPLICATION IS RUNNING !!!
+echo --- THE APPLICATION IS RUNNING ---
