@@ -44,7 +44,6 @@ services:
     depends_on:
       - "eureka"
     build: './servizioB'
-    container_name: "serviziob"
   servizioc:
     depends_on:
       - "eureka"

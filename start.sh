@@ -24,7 +24,7 @@ gradle build
 cd ..
 
 echo !!!DOCKER COMPOSE!!!
-docker-compose up --build --scale servizioa=3 --scale servizioc=3 
+docker-compose up --build --scale servizioa=3 --scale serviziob=3 --scale servizioc=3 
 
 #echo !!! ALL BUILD RUN APPLICATIONS !!!
 #java -Xms64m -Xmx128m -jar eureka-server/build/libs/eureka-server.jar &
