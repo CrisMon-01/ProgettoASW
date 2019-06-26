@@ -23,8 +23,8 @@ public class CService {
 	}
 
 	public String getAnimals() {
-		String commaSeparated = String.join(",", this.animals);
-		String out = this.getInstanceName() + ":[" + commaSeparated + "]";
+		String commaDivision = String.join(",", this.animals);
+		String out = "\n" + this.getInstanceName() + ":[" + commaDivision + "]" + "\n";
 		return out;
 	}
 

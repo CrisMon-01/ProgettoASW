@@ -17,5 +17,5 @@ eureka:
 server:
   port: ${PORT:${SERVER_PORT:0}}
 
-names: Beatrice, Berarda, Bernardo
+names: Andromaca, Briseide, Elena, Ettore, Paride, Priamo 
 animals: Balena, Cammello, Elefante, Pinguino, Volpe

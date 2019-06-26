@@ -16,7 +16,7 @@ eureka:
 server:
   port: ${PORT:${SERVER_PORT:0}}
 
-names: Achille, Alen, Alex, Alice
+names: Achille, Agamennone, Menelao, Penelope, Telemaco, Ulisse 
 animals: Balena, Cammello, Elefante, Pinguino, Volpe
 
 
