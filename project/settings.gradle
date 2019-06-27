@@ -1,11 +1,19 @@
-include 'servizioA'
-include 'servizioB'
+/*pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}*/
+
 include 'eureka-server'
-// include 'zuul-gateway'
+include 'zuul-gateway'
+include 'a-service'
+include 'b-service'
+include 'c-service'
 
-rootProject.name = 'cft-servizioA'
+rootProject.name = 'project'
 
-project(':servizioA').name = 'servizioA'
-project(':servizioB').name = 'servizioB'
-project(':eureka-server').name = 'eureka'
-// project(':zuul-gateway').name = 'zuul'
+project(':eureka-server').name = 'eureka-server'
+project(':zuul-gateway').name = 'zuul-gateway'
+project(':a-service').name = 'a-service'
+project(':b-service').name = 'b-service'
+project(':c-service').name = 'c-service'

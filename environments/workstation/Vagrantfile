@@ -8,7 +8,7 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-ASW_SCRIPTS='/home/asw/shared/scripts/'
+ASW_SCRIPTS='/home/ProgettoASW/shared/scripts/'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Configurazioni comuni.
@@ -17,11 +17,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "bento/ubuntu-18.04"
     # config.vm.box_url = "https://app.vagrantup.com/bento/boxes/ubuntu-18.04"
 
-    # folder per i progetti Asw (/home/asw/projects)
-    config.vm.synced_folder "../../projects/", "/home/asw/projects", :mount_options => ["dmode=777", "fmode=777"]
+    # folder per il progetto Asw2019 (/home/ProgettoASW/project)
+    config.vm.synced_folder "../../project/", "/home/ProgettoASW/project", :mount_options => ["dmode=777", "fmode=777"]
 
-    # folder per le risorse condivise per gli ambienti Asw (/home/asw/shared/resources e /home/asw/shared/scripts) 
-    config.vm.synced_folder "../../shared/", "/home/asw/shared", :mount_options => ["dmode=777", "fmode=777"]
+    # folder per le risorse condivise per gli ambienti Asw (/home/ProgettoASW/shared/resources e /home/ProgettoASW/shared/scripts) 
+    config.vm.synced_folder "../../shared/", "/home/ProgettoASW/shared", :mount_options => ["dmode=777", "fmode=777"]
 
     # folder per i dati condivisi per gli ambienti Asw (/home/asw/data) 
 	# da usare per eventuali volumi docker 
