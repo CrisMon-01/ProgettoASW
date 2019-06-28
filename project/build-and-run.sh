@@ -5,30 +5,7 @@ source set-docker-host-ip.sh
 
 echo --- BEGIN BUILD ---
 
-echo BUILD EUREKA
-cd eureka-server
 gradle build
-cd ..
-
-echo BUILD A-SERVICE
-cd a-service
-gradle build
-cd ..
-
-echo BUILD B-SERVICE
-cd b-service
-gradle build
-cd ..
-
-echo BUILD C-SERVICE
-cd c-service
-gradle build
-cd ..
-
-echo BUILD ZUUL-GATEWAY
-cd zuul-gateway
-gradle build 
-cd ..
 
 echo --- BUILD COMPLETE ---
 

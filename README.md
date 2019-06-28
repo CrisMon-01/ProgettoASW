@@ -2,7 +2,8 @@
 
 Progetto per il corso "Architettura dei Sistemi Software" a.a. 2018-2019. <br />
 
-Versione progetto selezionata: 2D http://cabibbo.dia.uniroma3.it/asw/progetti/asw-progetto.pdf<br />
+Versione progetto selezionata: 2D 
+Riferimento specifiche e tecnologie adoperate: http://cabibbo.dia.uniroma3.it/asw/progetti/asw-progetto.pdf<br />
 
 Membri:
 * Baldazzi Teodoro;
@@ -30,29 +31,29 @@ Pertanto risulta sufficiente:
 ```
     cd project
     source set-docker-host-ip.sh
-    sh build-and-run.sh
+    ./build-and-run.sh
 ```
 
 Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 * Costruzione applicazione:
 ```
     cd project
-    sh build-project.sh
+    ./build-project.sh
 ```
 * Clean applicazione:
 ```
-    sh clean-java-projects.sh
+    ./clean-java-projects.sh
 ```
 * Esecuzione applicazione:
 ```   
     source set-docker-host-ip.sh
-    sh start-services.sh # singola istanza per ciascun servizio
-    sh start-services-replicated.sh # più istanze per ciascun servizio
+    ./start-services.sh 	    # singola istanza per ciascun servizio
+    ./start-services-replicated.sh  # più istanze per ciascun servizio
 ```
 
 * Verifica applicazione (su altra finestra workstation)
-in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua 10 POST e 10 GET, 
-oppure `` run-curl-client-forever.sh `` (alla fine va arrestato con CTRL-C).
+in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua 1 POST e 1 GET, 
+oppure `` run-curl-client-infinite.sh `` (alla fine va arrestato con CTRL-C).
 
 Alcune osservazioni: 
 * le applicazioni funzionano correttamente anche in presenza di più istanze di ciascun servizio; visto il limitato
@@ -63,5 +64,8 @@ istanze di uno stesso servizio;
 
 ## Arresto
 
-Per arrestare l'applicazione, eseguire lo script `` stop-with-compose.sh ``.
+Per arrestare l'applicazione, eseguire:
+``` 
+    ./stop-with-compose.sh 
+```
 
