@@ -2,7 +2,7 @@
 
 Progetto per il corso "Architettura dei Sistemi Software" a.a. 2018-2019. <br />
 
-Versione progetto selezionata: 2D 
+Versione progetto selezionata: 2D. <br /> 
 Riferimento specifiche e tecnologie adoperate: http://cabibbo.dia.uniroma3.it/asw/progetti/asw-progetto.pdf<br />
 
 Membri:
