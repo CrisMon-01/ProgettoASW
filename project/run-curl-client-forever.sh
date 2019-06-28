@@ -2,7 +2,12 @@
 
 while true; do 
 	sleep 3
-	curl localhost:8080/aservice
+	
+	echo "Richiesta POST servizio A"
 	curl -X POST localhost:8080/aservice
-	echo "" ; 
+	echo "" 
+	
+	echo "Richiesta GET servizio A"
+	curl localhost:8080/aservice
+	echo ""
 done 
