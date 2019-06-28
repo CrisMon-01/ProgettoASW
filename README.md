@@ -9,6 +9,7 @@ Membri:
 * D'Agostino Fabiano;
 * Monti Cristian.
 
+
 ## Ambiente di esecuzione 
 
 L'applicazione è stata ideata per essere eseguita nell'ambiente [workstation](environments/workstation/), usando Vagrant. 
@@ -20,13 +21,14 @@ Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'app
     vagrant ssh
 ```
 
+
 ## Esecuzione applicazione (dopo aver avviato ambiente [workstation](environments/workstation/))
 
 Per semplificare l'esecuzione, è stato costruito lo script [build-and-run.sh](project/), che effettua
 build e avvia l'applicazione con 3 istanze replicate per i servizi A, B e C. 
 Pertanto risulta sufficiente:
 ```
-    cd ../../project
+    cd project
     source set-docker-host-ip.sh
     sh build-and-run.sh
 ```
@@ -34,7 +36,7 @@ Pertanto risulta sufficiente:
 Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 * Costruzione applicazione:
 ```
-    cd ../../project
+    cd project
     sh build-project.sh
 ```
 * Clean applicazione:
@@ -47,7 +49,8 @@ Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
     sh start-services.sh # singola istanza per ciascun servizio
     sh start-services-replicated.sh # più istanze per ciascun servizio
 ```
-* Verifica applicazione
+
+* Verifica applicazione (su altra finestra workstation)
 in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua 10 POST e 10 GET, 
 oppure `` run-curl-client-forever.sh `` (alla fine va arrestato con CTRL-C).
 
@@ -56,6 +59,7 @@ Alcune osservazioni:
 numero di nomi identificativi a disposizione per ciascuno, potrebbe verificarsi la ripetizione dello stesso nome per differenti
 istanze di uno stesso servizio;
 * in particolare in presenza di più istanze, potrebbe occorrere qualche minuto affinché siano tutte registrate correttamente.
+
 
 ## Arresto
 
