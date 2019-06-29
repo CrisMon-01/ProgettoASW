@@ -10,8 +10,13 @@ Membri:
 * D'Agostino Fabiano;
 * Monti Cristian.
 
-I passi sono svolto con riferimento al caso in cui si è già all'interno della cartella del progetto.
-## Ambiente di esecuzione 
+
+## Esecuzione
+
+I seguenti passi sono presentati assumendo che ci si trovi all'interno della cartella ProgettoASW.
+
+
+### Ambiente di esecuzione 
 
 L'applicazione è stata ideata per essere eseguita nell'ambiente [workstation](environments/workstation/), usando Vagrant. 
 Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'applicazione e una per il suo client (ovvero aprire due connessioni ssh con la macchina virtuale ripetere la procedura di ``` vagrant ssh ``` dala cartella ``` ./environments/workstation/ ```).
@@ -23,7 +28,7 @@ Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'a
 ```
 
 
-## Esecuzione applicazione (dopo aver avviato ambiente [workstation](environments/workstation/))
+### Esecuzione applicazione (dopo aver avviato ambiente [workstation](environments/workstation/))
 
 Per semplificare l'esecuzione, è stato costruito lo script [build-and-run.sh](project/), che effettua
 build e avvia l'applicazione con 3 istanze replicate per i servizi A, B e C. 
@@ -47,22 +52,21 @@ Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 * Esecuzione applicazione:
 ```   
     source set-docker-host-ip.sh
-    ./start-services.sh 	    # singola istanza per ciascun servizio
+    ./start-services.sh 	        # singola istanza per ciascun servizio
     ./start-services-replicated.sh  # più istanze per ciascun servizio
 ```
 
 * Verifica applicazione (dall'altro terminale in ssh con la macchina virtuale: workstation)
-in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua 1 POST e 1 GET, 
-oppure `` run-curl-client-infinite.sh `` (alla fine va arrestato con CTRL-C).
+in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua il numero di POST e GET fornito in input o infinite (se si inserisce come input 0, nel quale caso alla fine va arrestato con CTRL-C).
 
 Alcune osservazioni: 
-* le applicazioni funzionano correttamente anche in presenza di più istanze di ciascun servizio; visto il limitato
-numero di nomi identificativi a disposizione per ciascuno, potrebbe verificarsi la ripetizione dello stesso nome per differenti
-istanze di uno stesso servizio;
-* in particolare in presenza di più istanze, potrebbe occorrere qualche minuto affinchè siano tutte registrate correttamente.
+* le applicazioni funzionano correttamente anche in presenza di più istanze di ciascun servizio; visto il limitato numero di nomi identificativi a disposizione per ciascuno, potrebbe verificarsi la ripetizione dello stesso nome per differenti istanze di uno stesso servizio;
+* in particolare in presenza di più istanze, potrebbe occorrere qualche minuto, a partire dalla prima richiesta del client, affinchè siano tutte registrate correttamente: sino ad allora si verificherà 
+`` ZuulException: Hystrix Readed time out ``. E' stato inoltre osservato che eseguire un elevato numero di richieste POST In tale intervallo di tempo possa causare che, nonostante l'eccezione sopra citata,
+alcune di queste abbiano effettivamente successo.
 
 
-## Arresto
+### Arresto
 
 Per arrestare l'applicazione, eseguire:
 ``` 
