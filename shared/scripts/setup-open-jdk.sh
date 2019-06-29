@@ -4,7 +4,7 @@ source "/home/ProgettoASW/shared/scripts/common.sh"
 
 # see https://openjdk.java.net/install/ 
 
-# set up Java constants 
+# set up the Java constants 
 OPENJDK_PACKAGE=openjdk-8-jdk
 
 echo "====================="

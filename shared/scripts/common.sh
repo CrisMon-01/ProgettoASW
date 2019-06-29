@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# dove vengono montate le risorse e i download condivisi 
+# dove vengono montate risorse e download condivisi 
 ASW_HOME=/home/ProgettoASW 
 ASW_DOWNLOADS=${ASW_HOME}/shared/downloads
 ASW_RESOURCES=${ASW_HOME}/shared/resources

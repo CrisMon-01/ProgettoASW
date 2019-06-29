@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo Starting Services
+echo Starting Services...
 
 docker-compose up

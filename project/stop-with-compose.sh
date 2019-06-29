@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo Halting Services
+echo Halting Services...
 
 docker-compose down -v
 

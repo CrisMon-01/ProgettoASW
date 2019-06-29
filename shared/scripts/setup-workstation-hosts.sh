@@ -2,7 +2,7 @@
 
 HOSTS_FILE=/etc/hosts 
 
-# aggiunge un # all'inizio delle linee che iniziano con 127.0.0.1 e 127.0.1.1 
+# aggiunge un # all'inizio di linee che iniziano con 127.0.0.1 e 127.0.1.1 
 function createModifiedHostsFile
 {
 	echo "modifying 127.0.x.x entries in /etc/hosts"

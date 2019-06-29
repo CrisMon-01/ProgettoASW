@@ -8,7 +8,7 @@ echo "========================="
 
 # set up Docker Compose constants 
 DOCKER_COMPOSE_VERSION=1.24.0
-# per le versioni: https://github.com/docker/compose/releases 
+# per versioni: https://github.com/docker/compose/releases 
 
 GET_DOCKER_COMPOSE_URL=https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)
 DOCKER_COMPOSE_PATH=/usr/local/bin/docker-compose

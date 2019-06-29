@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # da eseguire sul nodo workstation 
-# per creare uno swarm composto da un solo nodo 
+# per creare uno swarm composto da un singolo nodo 
 
 echo "Creating swarm on workstation" 
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# script per POST e GET client
+
 FILE_NAME=$0
 if [ $# != 1 ]
 then

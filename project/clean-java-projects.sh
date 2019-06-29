@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo Cleaning Java projects  
+echo Cleaning Java Projects  
 
 gradle clean 
 

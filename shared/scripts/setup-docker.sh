@@ -4,7 +4,7 @@ source "/home/ProgettoASW/shared/scripts/common.sh"
 
 # see https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-# per sovrascrivere la configurazione di docker, 
+# per sovrascrivere configurazione di docker, 
 # invocare uno script separato come prepare-docker-configuration.sh 
 
 # set up Docker constants 

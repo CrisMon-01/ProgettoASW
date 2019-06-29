@@ -1,4 +1,4 @@
-# calcola il mio indirizzo IP (sulla rete 10.11.1.xx)
+# calcola mio indirizzo IP (sulla rete 10.11.1.xx)
 # Ubuntu 16.04 
 # MY_IP_ADDR=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}' | grep '10.11.1.')
 # Ubuntu 18.04 

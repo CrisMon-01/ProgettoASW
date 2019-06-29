@@ -3,7 +3,7 @@
 echo Building Java projects
 gradle assemble
 
-echo Building images
+echo Building Docker images
 docker-compose build
 
 

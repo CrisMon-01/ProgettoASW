@@ -6,7 +6,7 @@ source "/home/ProgettoASW/shared/scripts/common.sh"
 MAVEN_VERSION=3.6.1
 
 MAVEN_ARCHIVE=apache-maven-${MAVEN_VERSION}-bin.zip
-# e.g., apache-maven-3.6.1-bin.zip
+# e.g. apache-maven-3.6.1-bin.zip
 # APACHE_MIRROR=http://apache.panu.it
 # APACHE_MIRROR=http://it.apache.contactlab.it
 APACHE_MIRROR=http://archive.apache.org

@@ -8,7 +8,7 @@ source "/home/ProgettoASW/shared/scripts/common.sh"
 GRADLE_VERSION=5.4.1
 
 GRADLE_ARCHIVE=gradle-${GRADLE_VERSION}-bin.zip
-# e.g., gradle-5.4.1-bin.zip
+# e.g. gradle-5.4.1-bin.zip
 GET_GRADLE_URL=https://services.gradle.org/distributions
 GRADLE_PATH=/usr/local/gradle-${GRADLE_VERSION} 
 # e.g. /usr/local/gradle-5.4.1

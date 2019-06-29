@@ -3,7 +3,7 @@
 source "/home/ProgettoASW/shared/scripts/common.sh"
 
 #
-# copia i file HOSTS.CONF e DAEMON.JSON per sovrascrivere la configurazione di docker 
+# copia file HOSTS.CONF e DAEMON.JSON per sovrascrivere la configurazione di docker 
 # - il primo, per abilitare la comunicazione remota del nodo 
 # - il secondo, per abilitare my-registry:5000 e swarm.inf.uniroma3.it:5000 come registry insicuri 
 # 
