@@ -19,7 +19,7 @@ I seguenti passi sono presentati assumendo che ci si trovi all'interno della car
 ### Ambiente di esecuzione 
 
 L'applicazione è stata ideata per essere eseguita nell'ambiente [workstation](environments/workstation/), usando Vagrant. 
-Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'applicazione e una per il suo client (ovvero aprire due connessioni ssh con la macchina virtuale ripetere la procedura di ``` vagrant ssh ``` dala cartella ``` ./environments/workstation/ ```).
+Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'applicazione e una per il suo client (ovvero aprire due connessioni ssh con la macchina virtuale ripetendo la procedura di ``` vagrant ssh ``` dalla cartella ``` ./environments/workstation/ ```).
 * Esecuzione ambiente [workstation](environments/workstation/):
 ```
     cd environments/workstation
@@ -43,7 +43,7 @@ Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 * Costruzione applicazione:
 ```
     cd project
-    ./build-project.sh
+    ./build-projects.sh
 ```
 * Clean applicazione (se necessario):
 ```
@@ -53,7 +53,7 @@ Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 ```   
     source set-docker-host-ip.sh
     ./start-services.sh 	        # singola istanza per ciascun servizio
-    ./start-services-replicated.sh  # più istanze per ciascun servizio
+    ./start-services-replicated.sh      # più istanze per ciascun servizio
 ```
 
 * Verifica applicazione (dall'altro terminale in ssh con la macchina virtuale: workstation)
