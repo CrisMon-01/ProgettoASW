@@ -10,11 +10,11 @@ Membri:
 * D'Agostino Fabiano;
 * Monti Cristian.
 
-
+I passi sono svolto con riferimento al caso in cui si Ã¨ giÃ  all'interno della cartella del progetto.
 ## Ambiente di esecuzione 
 
-L'applicazione è stata ideata per essere eseguita nell'ambiente [workstation](environments/workstation/), usando Vagrant. 
-Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'applicazione e una per il suo client.
+L'applicazione ï¿½ stata ideata per essere eseguita nell'ambiente [workstation](environments/workstation/), usando Vagrant. 
+Vanno perï¿½ utilizzate piï¿½ finestre (terminali) diverse. In genere, una per l'applicazione e una per il suo client (ovvero aprire due connessioni ssh con la macchina virtuale ripetere la procedura di ``` vagrant ssh ``` dala cartella ``` ./environments/workstation/ ```).
 * Esecuzione ambiente [workstation](environments/workstation/):
 ```
     cd environments/workstation
@@ -25,9 +25,9 @@ Vanno però utilizzate più finestre (terminali) diverse. In genere, una per l'app
 
 ## Esecuzione applicazione (dopo aver avviato ambiente [workstation](environments/workstation/))
 
-Per semplificare l'esecuzione, è stato costruito lo script [build-and-run.sh](project/), che effettua
+Per semplificare l'esecuzione, ï¿½ stato costruito lo script [build-and-run.sh](project/), che effettua
 build e avvia l'applicazione con 3 istanze replicate per i servizi A, B e C. 
-Pertanto risulta sufficiente:
+Pertanto risulta sufficiente da uno dei due terminali eseguire:
 ```
     cd project
     source set-docker-host-ip.sh
@@ -48,18 +48,18 @@ Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 ```   
     source set-docker-host-ip.sh
     ./start-services.sh 	    # singola istanza per ciascun servizio
-    ./start-services-replicated.sh  # più istanze per ciascun servizio
+    ./start-services-replicated.sh  # piï¿½ istanze per ciascun servizio
 ```
 
-* Verifica applicazione (su altra finestra workstation)
-in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua 1 POST e 1 GET, 
+* Verifica applicazione (dall'altro terminale in ssh con la macchina virtuale: workstation)
+in pratica, l'applicazione puï¿½ essere verificata usando lo script `` run-curl-client.sh ``, che effettua 1 POST e 1 GET, 
 oppure `` run-curl-client-infinite.sh `` (alla fine va arrestato con CTRL-C).
 
 Alcune osservazioni: 
-* le applicazioni funzionano correttamente anche in presenza di più istanze di ciascun servizio; visto il limitato
+* le applicazioni funzionano correttamente anche in presenza di piï¿½ istanze di ciascun servizio; visto il limitato
 numero di nomi identificativi a disposizione per ciascuno, potrebbe verificarsi la ripetizione dello stesso nome per differenti
 istanze di uno stesso servizio;
-* in particolare in presenza di più istanze, potrebbe occorrere qualche minuto affinché siano tutte registrate correttamente.
+* in particolare in presenza di piï¿½ istanze, potrebbe occorrere qualche minuto affinchï¿½ siano tutte registrate correttamente.
 
 
 ## Arresto
