@@ -60,10 +60,8 @@ Qualora si volessero invece svolgere manualmente tutti i passi per l'esecuzione:
 in pratica, l'applicazione può essere verificata usando lo script `` run-curl-client.sh ``, che effettua il numero di POST e GET fornito in input o infinite (se si inserisce come input 0, nel quale caso alla fine va arrestato con CTRL-C).
 
 Alcune osservazioni: 
-* le applicazioni funzionano correttamente anche in presenza di più istanze di ciascun servizio; visto il limitato numero di nomi identificativi a disposizione per ciascuno, potrebbe verificarsi la ripetizione dello stesso nome per differenti istanze di uno stesso servizio;
-* in particolare in presenza di più istanze, potrebbe occorrere qualche minuto, a partire dalla prima richiesta del client, affinchè siano tutte registrate correttamente: sino ad allora si verificherà 
-`` ZuulException: Hystrix Readed time out ``. E' stato inoltre osservato che eseguire un elevato numero di richieste POST In tale intervallo di tempo possa causare che, nonostante l'eccezione sopra citata,
-alcune di queste abbiano effettivamente successo.
+* l' applicazione funziona correttamente anche in presenza di più istanze di ciascun servizio; visto il limitato numero di nomi identificativi a disposizione per ciascuno, potrebbe verificarsi la ripetizione del nome per differenti istanze di uno stesso servizio;
+* in particolare in presenza di un elevato numero di istanze, potrebbe occorrere qualche minuto, a partire dalla prima richiesta del client, affinchè siano tutte registrate correttamente: sino ad allora si verificherà `` ZuulException: Hystrix Readed time out `` a seguito di ciascun curl. E' stato inoltre osservato che eseguire un elevato numero di richieste POST nell'intervallo di tempo sopra citato possa causare che, nonostante l'eccezione di timeout, alcune di queste abbiano effettivamente successo, pur con un certo ritardo.
 
 
 ### Arresto
